@@ -16,9 +16,9 @@ class Song
     #   artist: data_array[0].strip,
     #   song: data_array[1].strip
     # }
-    fn_hash = file_name.split(/[-]/).instance_eval do |data|
-      {artist: data[0].strip,
-        song: data[1].strip}
+    fn_hash = file_name.split(/[-]/).instance_eval do
+      {artist: self[0].strip,
+        song: self[1].strip}
     end
     # binding.pry
     Song.new(fn_hash[:song]).tap do |s|
